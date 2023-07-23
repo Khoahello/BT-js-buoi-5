@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- My css -->
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body class="container">
+    <!-- Bài 1 -->
+    <div class="Bai-1 mt-4">
+      <h1>Bài 1: Quản lý tuyển sinh</h1>
+      <div class="col-4">
+        <div class="form-inline">
+          <div class="form-group">
+            <div class="my-1 mr-2">
+              <label for="">Điểm chuẩn</label>
+            </div>
+            <div class="my-1 mr-sm-2">
+              <input
+                type="text"
+                class="form-control"
+                id="diem-chuan"
+                placeholder="Điểm chuẩn"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="form-inline">
+          <div class="form-group">
+            <div class="my-1 mr-2">
+              <label class="mr-sm-2" for="inlineFormCustomSelect"
+                >Ưu tiên</label
+              >
+            </div>
+            <div class="my-1 mr-sm-2">
+              <select class="custom-select mr-sm-2" id="khu-vuc">
+                <option selected>Khu vực</option>
+                <option value="2">A</option>
+                <option value="1">B</option>
+                <option value="0.5">C</option>
+                <option value="0">Không thuộc khu vực ưu tiên</option>
+              </select>
+              <select class="custom-select mr-sm-2" id="doi-tuong">
+                <option selected>Đối tượng</option>
+                <option value="2.5">1</option>
+                <option value="1.5">2</option>
+                <option value="1">3</option>
+                <option value="0">Không thuộc đối tượng ưu tiên</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="form-inline">
+          <div class="form-group">
+            <div class="my-1 mr-2">
+              <label for="">Điểm thi</label>
+            </div>
+            <div class="my-1 mr-sm-2">
+              <input
+                type="number"
+                class="form-control"
+                id="diem-mon-1"
+                placeholder="Điểm môn 1"
+              />
+            </div>
+            <div class="my-1 mr-sm-2">
+              <input
+                type="number"
+                class="form-control"
+                id="diem-mon-2"
+                placeholder="Điểm môn 2"
+              />
+            </div>
+            <div class="my-1 mr-sm-2">
+              <input
+                type="number"
+                class="form-control"
+                id="diem-mon-3"
+                placeholder="Điểm môn 3"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary" onclick="traDiemThi()">Tra cứu</button>
+      <h2 id="tong-diem"></h2>
+    </div>
+
+    <!-- Bài 2 -->
+    <div class="Bai-2 mt-5">
+      <h1>Bài 2: Tính tiền điện</h1>
+      <div class="col-4">
+        <div class="form-inline">
+          <div class="form-group">
+            <div class="my-1 mr-2">
+              <label for="">Họ và tên</label>
+            </div>
+            <div class="my-1 mr-sm-2">
+              <input
+                type="text"
+                class="form-control"
+                id="dien-ho-va-ten"
+                placeholder="Nhập họ và tên"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="form-inline">
+          <div class="form-group">
+            <div class="my-1 mr-2">
+              <label for="">Công suất</label>
+            </div>
+            <div class="my-1 mr-sm-2">
+              <input
+                type="number"
+                class="form-control"
+                id="cong-suat"
+                placeholder="Nhập số kw"
+              />
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-primary" onclick="tinhTienDien()">
+          Tính tiền điện
+        </button>
+        <h2 id="tien-dien"></h2>
+      </div>
+    </div>
+
+    <!-- Bài 3 -->
+    <div class="Bai-3 mt-5">
+      <h1>Bài 2: Tính thuế thu nhập cá nhân</h1>
+      <div class="col-4">
+        <div class="form-inline">
+          <div class="form-group">
+            <div class="my-1 mr-2">
+              <label for="">Họ và tên</label>
+            </div>
+            <div class="my-1 mr-sm-2">
+              <input
+                type="text"
+                class="form-control"
+                id="thue-ho-va-ten"
+                placeholder="Họ và tên"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="form-inline">
+          <div class="form-group">
+            <div class="my-1 mr-2">
+              <label for="">Tổng thu nhập cá nhân</label>
+            </div>
+            <div class="my-1 mr-2">
+              <input
+                type="number"
+                class="form-control"
+                id="tong-thu-nhap-ca-nhan"
+                placeholder="Tổng thu nhập cá nhân"
+              />
+            </div>
+            <div class="my-1 mr-sm-2">
+              <input
+                type="number"
+                class="form-control"
+                id="so-nguoi-phu-thuoc"
+                placeholder="Số người phụ thuộc"
+              />
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-primary" onclick="tinhTienThue()">
+          Tính tiền điện
+        </button>
+        <h2 id="tien-dien"></h2>
+      </div>
+    </div>
+
+    <!--  -->
+    <!--       <div class="form-inline">
+        <div class="form-group">
+          <div class="my-1 mr-2">
+            <label for="">Điểm chuẩn</label>
+          </div>
+          <div class="my-1 mr-sm-2">
+            <input
+              type="text"
+              class="form-control"
+              id=""
+              placeholder="Nhập điểm chuẩn"
+            />
+            <input
+              type="text"
+              class="form-control"
+              id=""
+              placeholder="Nhập điểm chuẩn"
+            /> -->
+    <script src="index.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
