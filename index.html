@@ -101,7 +101,7 @@
         </div>
       </div>
       <button class="btn btn-primary" onclick="traDiemThi()">Tra cứu</button>
-      <h2 id="tong-diem"></h2>
+      <h2 class="mt-2" id="tong-diem"></h2>
     </div>
 
     <!-- Tính tiền điện -->
@@ -141,11 +141,11 @@
             </div>
           </div>
         </div>
-        <button class="btn btn-primary" onclick="tinhTienDien()">
-          Tính tiền điện
-        </button>
-        <h2 id="tien-dien"></h2>
       </div>
+      <button class="btn btn-primary" onclick="tinhTienDien()">
+        Tính tiền điện
+      </button>
+      <h2 class="mt-2" id="tien-dien"></h2>
     </div>
 
     <!-- Tính thuế thu nhập cá nhân -->
@@ -183,7 +183,17 @@
                 placeholder="Tổng thu nhập cá nhân"
               />
             </div>
-            <div class="my-1 mr-sm-2">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="form-inline">
+          <div class="form-group">
+            <div class="my-1 mr-2">
+              <label for="">Số người phụ thuộc</label>
+            </div>
+            <div class="my-1 mr-2">
               <input
                 type="number"
                 class="form-control"
@@ -193,15 +203,15 @@
             </div>
           </div>
         </div>
-        <button class="btn btn-primary" onclick="tinhTienThue()">
-          Tính tiền thuế
-        </button>
-        <h2 id="tien-thue"></h2>
       </div>
+      <button class="btn btn-primary" onclick="tinhTienThue()">
+        Tính tiền thuế
+      </button>
+      <h2 class="mt-2" id="tien-thue"></h2>
     </div>
 
     <!-- Tính tiền cáp -->
-    <div class="Bai-4 mt-4">
+    <div class="Bai-4 mt-5">
       <h1>Tính tiền cáp</h1>
       <div class="col-4">
         <div class="form-inline">
@@ -279,7 +289,7 @@
       <button class="btn btn-primary" onclick="tinhTienCap()">
         Tính tiền cáp
       </button>
-      <h2 id="tien-cap"></h2>
+      <h2 class="mt-2" id="tien-cap"></h2>
     </div>
     <script src="index.js"></script>
     <!-- Optional JavaScript -->

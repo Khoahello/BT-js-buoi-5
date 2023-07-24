@@ -47,13 +47,32 @@ function tinhTienDien() {
 // Tính thuế thu nhập cá nhân
 function tinhTienThue() {
     var thueHoVaTen = document.getElementById("thue-ho-va-ten").value
-    var TongThuNhapCaNhan = document.getElementById("tong-thu-nhap-ca-nhan").value * 1
-    var SoNguoiPhuThuoc = document.getElementById("so-nguoi-phu-thuoc").value * 1
-    var ThuNhapChiuThue = TongThuNhapCaNhan - 4000000 - SoNguoiPhuThuoc * 1600000
-    if (ThuNhapChiuThue) {
-
+    var tongThuNhapCaNhan = document.getElementById("tong-thu-nhap-ca-nhan").value * 1
+    var soNguoiPhuThuoc = document.getElementById("so-nguoi-phu-thuoc").value * 1
+    var thuNhapChiuThue = tongThuNhapCaNhan - 4000000 - soNguoiPhuThuoc * 1600000
+    var thueSuat = 0
+    var tienThue = 0
+    if (thuNhapChiuThue > 0) {
+        if (thuNhapChiuThue <= 60000000) {
+            thueSuat = 0.05
+        } else if (thuNhapChiuThue <= 120000000) {
+            thueSuat = 0.1
+        } else if (thuNhapChiuThue <= 210000000) {
+            thueSuat = 0.15
+        } else if (thuNhapChiuThue <= 384000000) {
+            thueSuat = 0.2
+        } else if (thuNhapChiuThue <= 624000000) {
+            thueSuat = 0.25
+        } else if (thuNhapChiuThue <= 960000000) {
+            thueSuat = 0.3
+        } else {
+            thueSuat = 0.35
+        }
+        tienThue = thuNhapChiuThue * thueSuat
+        document.getElementById("tien-thue").innerText = `Họ và tên: ${thueHoVaTen}; Tiền thuế thu nhập cá nhân: ${tienThue.toLocaleString()} VND`
+    } else {
+        alert ("Số tiền thu nhập không hợp lệ")
     }
-
 }
 
 // Tính tiền cáp
