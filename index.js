@@ -10,17 +10,28 @@ function traDiemThi() {
     var khuVuc = document.getElementById("khu-vuc").value * 1
     var doiTuong = document.getElementById("doi-tuong").value * 1
     var diemMon1 = document.getElementById("diem-mon-1").value * 1
+    console.log("🚀 ~ file: index.js:13 ~ traDiemThi ~ diemMon1:", diemMon1)
     var diemMon2 = document.getElementById("diem-mon-2").value * 1
+    console.log("🚀 ~ file: index.js:15 ~ traDiemThi ~ diemMon2:", diemMon2)
     var diemMon3 = document.getElementById("diem-mon-3").value * 1
+    console.log("🚀 ~ file: index.js:17 ~ traDiemThi ~ diemMon3:", diemMon3)
     var tongDiem = 0
-    if (diemMon1 == 0 || diemMon2 == 0 || diemMon3 == 0) {
-        document.getElementById("tong-diem").innerText = "Bạn đã rớt do có môn bị điểm 0"
+    if (khuVuc == -1 && doiTuong == -1) {
+        alert("Vui lòng chọn Khu vực và Đối tượng")
+    } else if (khuVuc == -1) {
+        alert("Vui lòng chọn Khu vực ")
+    } else if (doiTuong == -1) {
+        alert("Vui lòng chọn Đối tượng")
     } else {
-        tongDiem = khuVuc + doiTuong + diemMon1 + diemMon2 + diemMon3
-        if (tongDiem >= diemChuan) {
-            document.getElementById("tong-diem").innerText = `Bạn đã đậu. Tổng điểm: ${tongDiem}`
+        if (diemMon1 == 0 || diemMon2 == 0 || diemMon3 == 0) {
+            document.getElementById("tong-diem").innerText = "Bạn đã rớt do có môn bị điểm 0"
         } else {
-            document.getElementById("tong-diem").innerText = `Bạn đã rớt. Tổng điểm: ${tongDiem}`
+            tongDiem = khuVuc + doiTuong + diemMon1 + diemMon2 + diemMon3
+            if (tongDiem >= diemChuan) {
+                document.getElementById("tong-diem").innerText = `Bạn đã đậu. Tổng điểm: ${tongDiem}`
+            } else {
+                document.getElementById("tong-diem").innerText = `Bạn đã rớt. Tổng điểm: ${tongDiem}`
+            }
         }
     }
 }
@@ -93,7 +104,7 @@ function tinhTienCap() {
     var soKetNoi = document.getElementById("so-ket-noi").value * 1
     var tienThue = 0
     if (x == 0) {
-        alert ("Hãy chọn loại khách hàng")
+        alert ("Vui lòng chọn Loại khách hàng")
     } else if (x == 2) {
         if (soKetNoi <= 10) {
             tienThue = 15 + soKenhCaoCap * 50 + 75
