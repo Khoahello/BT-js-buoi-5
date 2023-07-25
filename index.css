@@ -9,10 +9,47 @@ html, body {
     box-sizing: border-box;
 }
 
-/* .item-left {
-    width: 20%;
-} */
-
 #so-ket-noi-doanh-nghiep {
     display: none;
+}
+
+.tieu_de h1 {
+    color: #003298;
+}
+
+.tieu_de i {
+    margin-top: 6px;
+    margin-right: 5px;
+    font-size: 40px;
+    color: #003298;
+}
+
+.tieu_de {
+    width: 70%;
+    margin-bottom: 30px;
+    border-bottom: 1px solid whitesmoke;
+}
+
+.Bai {
+    margin-top: 200px;
+}
+
+button {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+h2 {
+    margin-top: 30px;
+    font-size: 35px;
+}
+
+button i {
+    font-size: 15px;
+    color: white;
+}
+
+label {
+    font-size: 17px;
+    font-weight: 600;
 }
