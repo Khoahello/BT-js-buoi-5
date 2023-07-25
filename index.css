@@ -9,6 +9,10 @@ html, body {
     box-sizing: border-box;
 }
 
+.item-left {
+    width: 20%;
+}
+
 #so-ket-noi-doanh-nghiep {
     display: none;
 }
